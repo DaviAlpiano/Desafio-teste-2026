@@ -6,13 +6,7 @@ const bucarMunicipios = (dadosCsv:any[], dadosIbge:any[], context:string) => {
 
         const correspondenteIbge = dadosIbge.find(itemIbge => {
             const nomeLimpoIbge = normalizar(itemIbge.nome);
-            const matchNome = nomeLimpoIbge === nomeLimpoCsv;
-
-            if (matchNome && nomeLimpoIbge === "santo andre") {
-                const popCsv = parseInt(itemCsv.populacao);
-                return popCsv > 100000; 
-            }
-            
+                        
             return nomeLimpoIbge === nomeLimpoCsv;
         });
 

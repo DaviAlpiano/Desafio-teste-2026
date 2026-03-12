@@ -21,7 +21,6 @@ async function enviarResposta(dadosCalculados: any) {
     }
 
     const resultado = await resposta.json();
-    console.log(resultado);
     return resultado
 
   } catch (erro: any) {

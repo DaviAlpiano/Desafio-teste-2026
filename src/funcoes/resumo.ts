@@ -28,7 +28,7 @@ const resumo = (resultados: any[]) => {
 
   Object.keys(acumuladorRegioes).forEach(reg => {
     const media = acumuladorRegioes[reg].soma / acumuladorRegioes[reg].qtd;
-    medias_por_regiao[reg] = parseFloat(media.toFixed(2)); 
+    medias_por_regiao[reg] = media; 
   });
 
   return { 'stats': {

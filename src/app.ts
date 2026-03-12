@@ -10,13 +10,15 @@ const app = async () => {
 
     const dadosCsv = await lerInput();
     
-    const buscaCsv = bucarMunicipios(dadosCsv, dadosIbge, 'csv');
-    const buscaResumo = bucarMunicipios(dadosCsv, dadosIbge);
+    const buscaCsv = bucarMunicipios(dadosCsv, dadosIbge, 'csv') as any[];
+    const buscaResumo = bucarMunicipios(dadosCsv, dadosIbge, 'none') as any[];
     
-    const gerarArquivos = gerarArquivoResultado(buscaCsv);
+    gerarArquivoResultado(buscaCsv);
     const gerarResumo = resumo(buscaResumo);
     
     const resultado = await enviarResposta(gerarResumo);
+    console.log("Nota:", resultado.score);
+    
 }
 
 app();

@@ -7,7 +7,7 @@ export interface IMunicipio {
   populacao: string;
 }
 
-async function lerInput() {
+async function lerInput(): Promise<IMunicipio[]> {
   const listaDeObjetos: IMunicipio[] = [];
   
   const caminhoArquivo = path.resolve('src/dados/input.csv');
